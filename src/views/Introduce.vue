@@ -1,7 +1,7 @@
 <template>
-  <section>
+  <main>
     Hello Introduce
-  </section>
+  </main>
 </template>
 
 <script lang="ts" setup>

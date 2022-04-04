@@ -1,7 +1,10 @@
 <template>
   <div>
     <AppBar />
-    <RouterView />
+
+    <div class="mx-auto max-w-6xl">
+      <RouterView />
+    </div>
   </div>
 </template>
 

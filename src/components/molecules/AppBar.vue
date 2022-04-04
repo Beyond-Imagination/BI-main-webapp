@@ -1,8 +1,8 @@
 <template>
   <header class="px-4 py-4 flex justify-between mx-auto max-w-6xl">
-    <div class="font-bold text-2xl dark:text-white">
+    <a href="/" class="font-bold text-2xl dark:text-white">
       Beyond Imagination
-    </div>
+    </a>
     <div class="flex">
       <template v-for="(item, index) in btnItems" :key="index">
         <Button @click="onClickBtn(item)" class="mx-4">
