@@ -1,11 +1,11 @@
 <template>
   <section>
-    Hello Home
+    Hello Introduce
   </section>
 </template>
 
 <script lang="ts" setup>
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 </style>

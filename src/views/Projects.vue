@@ -1,11 +1,13 @@
 <template>
   <section>
-    Hello Home
+    Hello Projects
   </section>
 </template>
 
-<script lang="ts" setup>
+<script setup lang="ts">
+
 </script>
 
 <style scoped lang="scss">
+
 </style>
