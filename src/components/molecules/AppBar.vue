@@ -1,6 +1,6 @@
 <template>
   <header class="px-4 py-4 flex justify-between mx-auto max-w-6xl">
-    <a href="/" class="font-bold text-2xl dark:text-white">
+    <a href="/" class="font-bold text-2xl dark:text-white dark:hover:text-indigo-300 transition-colors">
       Beyond Imagination
     </a>
     <div class="flex">
