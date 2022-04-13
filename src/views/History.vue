@@ -42,7 +42,7 @@ export default {
 <style scoped lang="scss">
 #history {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
-  /* -webkit-font-smoothing: antialiased; */
+  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #ffffff;

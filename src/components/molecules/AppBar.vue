@@ -30,7 +30,7 @@ const btnItems = ref<ButtonItem[]>([
   { label: '팀 소개', url: '/introduce' },
   { label: '팀원 소개', url: '/members' },
   { label: '프로젝트 소개', url: '/projects' },
-  { label: '연혁', url: '/timeline' },
+  { label: '연혁', url: '/history' },
   { label: '사진', url: '/photo' }
 ])
 
