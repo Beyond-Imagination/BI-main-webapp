@@ -1,22 +1,17 @@
 <template>
   <main>
-    <canvas
-      ref="canvasRef"
-      class="w-full h-full"
-    />
+    Hello Home!
   </main>
 </template>
 
 <script lang="ts" setup>
-
 import { onMounted, ref } from 'vue'
+import { contentfulClientApi, contentfulPreviewClientApi } from '@/plugins/contentful'
 
-const canvasRef = ref<HTMLCanvasElement>()
-
-onMounted(() => {
-  const context = canvasRef.value?.getContext('2d')
-
-  context?.fillRect(32, 32, 50, 50)
+onMounted(async () => {
+  const entries = await contentfulPreviewClientApi.getEntries()
+  // const entries = await contentfulClientApi.getEntries()
+  console.log(entries)
 })
 </script>
 
