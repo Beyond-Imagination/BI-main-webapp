@@ -4,7 +4,7 @@ import Home from '@/views/Home.vue'
 import Introduce from '@/views/Introduce.vue'
 import Members from '@/views/Members.vue'
 import Projects from '@/views/Projects.vue'
-import Timeline from '@/views/Timeline.vue'
+import History from '@/views/History.vue'
 import Photo from '@/views/Photo.vue'
 
 const router = createRouter({
@@ -31,9 +31,9 @@ const router = createRouter({
       component: Projects
     },
     {
-      path: '/Timeline',
-      name: 'Timeline',
-      component: Timeline
+      path: '/History',
+      name: 'History',
+      component: History
     },
     {
       path: '/Photo',
