@@ -34,8 +34,8 @@ export default {
       const locale = this.dateLocale || window.navigator.language
       const nameMonth = item.from.toLocaleDateString(locale, { month: 'long' })
       if (item.showDayAndMonth) {
-        const day = item.from.getDate()
-        return `${day}. ${nameMonth}`
+        const day = item.from.getDate()        
+        return `${nameMonth} ${day}일`
       }
 
       return nameMonth
