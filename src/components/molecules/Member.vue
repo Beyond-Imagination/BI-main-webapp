@@ -24,6 +24,7 @@ div {
     width: 250px;
     margin: 10px;
     display: inline-block;
+    float: left;
 }
 
 img {
