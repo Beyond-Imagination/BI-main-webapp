@@ -1,6 +1,6 @@
 <template>
 <div>
-    <img :src="member.photo">
+    <div :style="{backgroundImage: 'url(' + member.photo + ')'}" class="photo_container" ></div>
     <p class="name" :class= "{captain: member.captain}">{{member.name}} ({{member.company}})</p>
     <p>합류날짜: {{member.join_date}}</p>
     <p>관심분야: {{member.tech_stacks.join(', ')}}</p>
@@ -26,9 +26,10 @@ div {
     display: inline-block;
 }
 
-img {
-    width: inherit;
-    margin: 0px auto; 
+.photo_container {
+    width: 250px;
+    height: 250px;
+    background-size: cover;
 }
 
 p {
