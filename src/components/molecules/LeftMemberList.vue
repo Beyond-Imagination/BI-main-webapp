@@ -1,27 +1,27 @@
 <template>
-    <div id="member_container">
-        <h1>팀원소개</h1>
+    <div id="left_member_container">
+        <h1>탈퇴 멤버</h1>
 
-        <Member v-for="(member) in members" :member="member"></Member>
+        <LeftMember v-for="(leftMember) in leftMembers" :leftMember="leftMember"></LeftMember>
     </div>
 </template>
 
 <script lang="ts">
 import { contentfulClientApi } from '@/plugins/contentful'
-import Member from "./Member.vue"
+import LeftMember from "./LeftMember.vue"
 
 export default {
-    name: 'MemberList',
+    name: 'LeftMemberList',
     components: {
-        Member,
+        LeftMember,
     },
     data() {
         return {
-            members: [],
+            leftMembers: [],
         };
     },
     async mounted() {
-        const entries = await contentfulClientApi.getEntries({select: 'fields',content_type: 'member', order: 'fields.join_date',})
+        const entries = await contentfulClientApi.getEntries({select: 'fields',content_type: 'left_member', order: 'fields.join_date',})
 
         const map = new Map()
         entries.includes.Asset.forEach(asset => {
@@ -32,11 +32,7 @@ export default {
 
         entries.items.forEach(item => {
             item.fields.photo = map.get(item.fields.photo.sys.id)
-            if(item.fields.captain) {
-                this.members.unshift(item.fields)
-            } else {
-                this.members.push(item.fields)
-            }
+            this.leftMembers.push(item.fields)
         });
     },
 }
@@ -48,7 +44,7 @@ h1 {
     text-align: center;
 }
 
-#member_container:after {
+#left_member_container:after {
     content: "";
     display: block;
     clear: both;
