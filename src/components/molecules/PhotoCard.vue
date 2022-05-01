@@ -55,19 +55,4 @@ div {
     background-size: cover;
     position:relative;
 }
-
-p {
-    width: inherit;
-    margin: 2px;
-}
-
-.name {
-    font-size: 24px;
-    text-align: center;
-}
-
-.captain {
-    color: #EBE645;
-}
-
 </style>
