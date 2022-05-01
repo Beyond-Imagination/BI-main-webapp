@@ -30,7 +30,8 @@ Together they are powerful beyond imagination.<br>
       <div class="slide" style="display: flex; flex-direction: column">
         <div style="background-color: #000; width: 90%">
           <div style="display: flex; justify-content: center; margin-bottom: 32px">
-            <span style="font-family: 'Noto Sans KR';font-style: normal;font-weight: 700;font-size: 48px;line-height: 56px;">프로젝트를 소개합니다.</span>
+            <span
+                style="font-family: 'Noto Sans KR';font-style: normal;font-weight: 700;font-size: 48px;line-height: 56px;">프로젝트를 소개합니다.</span>
           </div>
           <div style="display: flex; flex-direction: row; justify-content: space-between; width: 100%">
             <div v-for="(item) in projects.items">
@@ -47,18 +48,64 @@ Together they are powerful beyond imagination.<br>
           </div>
         </div>
       </div>
-      <div class="slide"></div>
+      <div class="slide">
+        <div style="display: flex; flex-direction: row;">
+          <div style="margin-right: 140px;">
+            <div class="logo">
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column;">
+            <div style="margin-bottom: 80px">
+              <div
+                  style="font-style: normal;font-weight: 700;font-size: 48px;line-height: 56px; text-align: center; margin-bottom: 16px">
+                Beyond Imagination
+              </div>
+              <div
+                  style="font-style: normal;font-weight: 700;font-size: 16px;line-height: 24px;text-align: center;letter-spacing: 0.15px;">
+                상상을 뛰어넘는 생각을 실현하기위한 모임입니다.<br>
+                저희 모임에 합류하실 멋진 크루분들을 항상 기다립니다.
+              </div>
+            </div>
+            <div style="display: flex; flex-direction: row; justify-content: space-around">
+              <div>
+                <a href="https://github.com/Beyond-Imagination" style="display:flex; align-items: center">
+                  <div class="github-icon">
+                  </div>
+                  <div
+                      style="font-style: normal;font-weight: 400;font-size: 16px;line-height: 24px;text-align: center;letter-spacing: 0.15px;">
+                    github 바로가기
+                  </div>
+                </a>
+
+              </div>
+              <div>
+                <a href="mailto://beyond-imagination@gmail.com" style="display:flex; align-items: center">
+
+                  <div class="email-icon">
+                  </div>
+                  <div
+                      style="font-style: normal;font-weight: 400;font-size: 16px;line-height: 24px;text-align: center;letter-spacing: 0.15px;">
+                    email로 연락하기
+                  </div>
+                </a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
 
     <ul class="btns">
-      <li @click="activate(1)" :class="{active: activateElement === 1}"><a href="#"><img
-          src="/src/assets/images/paperplane.png" alt=""></a></li>
-      <li @click="activate(2)" :class="{active: activateElement === 2}"><a href="#"><img
-          src="/src/assets/images/paperplane.png" alt=""></a></li>
-      <li @click="activate(3)" :class="{active: activateElement === 3}"><a href="#"><img
-          src="/src/assets/images/paperplane.png" alt=""></a></li>
-      <li @click="activate(4)" :class="{active: activateElement === 4}"><a href="#"><img
-          src="/src/assets/images/paperplane.png" alt=""></a></li>
+      <li @click="activate(1)" :class="{active: activateElement === 1}"><a href="#">
+        <img src="/src/assets/images/paperplane.png" alt=""></a></li>
+      <li @click="activate(2)" :class="{active: activateElement === 2}"><a href="#">
+        <img src="/src/assets/images/paperplane.png" alt=""></a></li>
+      <li @click="activate(3)" :class="{active: activateElement === 3}"><a href="#">
+        <img src="/src/assets/images/paperplane.png" alt=""></a></li>
+      <li @click="activate(4)" :class="{active: activateElement === 4}"><a href="#">
+        <img src="/src/assets/images/paperplane.png" alt=""></a></li>
     </ul>
   </div>
 </template>
@@ -104,8 +151,11 @@ export default {
         }, 1500);
       }
     },
-    log(param: any){
+    log(param: any) {
       console.log(param)
+    },
+    activate(value: number) {
+      this.activateElement = value;
     }
   }
 };
@@ -114,12 +164,38 @@ export default {
 
 <style scoped lang="scss">
 
+
 #slider {
   width: 100%;
   height: calc(100vh - 72px);
   position: relative;
   overflow: hidden;
   font-family: 'Noto Sans KR';
+
+  .logo {
+    background: url("../assets/images/logo.png") rgba(0, 0, 0, .2);
+    width: 320px;
+    height: 320px;
+    background-size: cover;
+  }
+
+  .github-icon {
+    background: url("../assets/images/github.png") rgba(0, 0, 0, .2);
+    width: 70px;
+    height: 70px;
+    background-size: cover;
+    margin-right: 40px;
+    cursor: pointer;
+  }
+
+  .email-icon {
+    background: url("../assets/images/email.png") rgba(0, 0, 0, .2);
+    width: 70px;
+    height: 70px;
+    background-size: cover;
+    margin-right: 40px;
+    cursor: pointer;
+  }
 
   .panel {
     width: 100%;
