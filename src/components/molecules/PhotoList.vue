@@ -2,6 +2,7 @@
   <div>  
     <PhotoCard v-for="(photo) in photos" :photo="photo"></PhotoCard>
   </div>
+
 </template>
 
 <script lang="ts">
