@@ -1,8 +1,8 @@
 <template>
-  <div>  
+  <div :class = "{blurEffect : photoUrl}">  
     <PhotoCard v-for="(photo) in photos" :photo="photo" @setPhoto="setPhoto"></PhotoCard>
   </div>
-  <div  v-if = "photoUrl" v-on:mouseover="mouseover" v-on:mouseleave="mouseleave" :style="{backgroundImage: 'url(' + photoUrl + ')'}"
+  <div v-if = "photoUrl" v-on:mouseover="mouseover" v-on:mouseleave="mouseleave" :style="{backgroundImage: 'url(' + photoUrl + ')'}"
         v-on:click="photoUrl = null"
         class="photo_container">
         <div v-show="active" style = "height : 30px; width:500px; position:absolute; background-color:rgba(0, 0, 0, 0.8);">
@@ -73,5 +73,9 @@ export default {
         height:500px; 
         position:fixed;    
         background-size: cover;
+    }
+
+    .blurEffect{
+        filter:blur(1px);
     }
 </style>
