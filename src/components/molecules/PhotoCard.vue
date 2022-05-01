@@ -1,6 +1,6 @@
 <template>
    <div>
-      <div id = "photoCard">
+      <div id = "photoCard" v-on:click="$emit('setPhoto', this.photo)">
          <div v-on:mouseover="mouseover" v-on:mouseleave="mouseleave" :style="{backgroundImage: 'url(' + photo.photo + ')'}" class="photo_container" >
             <div v-show="active" style = "height : 30px; position:absolute; background-color:rgba(0, 0, 0, 0.8);">
                {{photo.date}}
@@ -15,19 +15,17 @@
 </template>
 
 <script lang="ts">
-
-
 export default {
     name: 'PhotoCard',
     props: {
         photo: {
             type: Object,
         },
+        setPhoto: Function
     },
     data() {
         return {
             active: false,
-            message : "hoverMe"
         };
     },
     methods: {
@@ -36,7 +34,7 @@ export default {
         },    
         mouseleave: function(){
         this.active = false;
-        }
+        },
     }
 }
 </script>
