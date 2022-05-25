@@ -1,7 +1,7 @@
 <template>
    <div>
       <div id = "photoCard" v-on:click="$emit('setPhoto', this.photo)">
-         <div v-on:mouseover="mouseover" v-on:mouseleave="mouseleave" :style="{backgroundImage: 'url(' + photo.photo + ')'}" class="photo_container" >
+         <div v-on:mouseover="mouseover" v-on:mouseleave="mouseleave" :style="{backgroundImage: 'url(' + photo.photo + ')'}" class="photo" >
             <div v-show="active" style = "height : 30px; position:absolute; background-color:rgba(0, 0, 0, 0.8);">
                {{photo.date}}
             </div>
@@ -47,7 +47,7 @@ div {
     float: left;
 }
 
-.photo_container {
+.photo {
     width: 250px;
     height: 250px;
     background-size: cover;

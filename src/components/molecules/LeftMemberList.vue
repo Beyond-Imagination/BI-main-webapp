@@ -1,7 +1,6 @@
 <template>
     <div id="left_member_container">
         <h1>탈퇴 멤버</h1>
-
         <LeftMember v-for="(leftMember) in leftMembers" :leftMember="leftMember"></LeftMember>
     </div>
 </template>
@@ -40,8 +39,9 @@ export default {
 
 <style scoped>
 h1 {
-    font-size: 48px;
+    font-size: 36px;
     text-align: center;
+    margin-bottom: 30px;
 }
 
 #left_member_container:after {

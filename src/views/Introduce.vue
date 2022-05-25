@@ -1,6 +1,6 @@
 <template>
-  <div id="slider" @wheel="handleWheelEvent">
-    <div v-bind:style="{marginTop: -857*(activateElement-1)+'px'}" class="panel">
+  <div id="slider">
+    <div class="panel">
       <div class="slide">
         <div class="text-container">
           <div>
@@ -97,16 +97,6 @@ Together they are powerful beyond imagination.<br>
       </div>
     </div>
 
-    <ul class="btns">
-      <li @click="activate(1)" :class="{active: activateElement === 1}"><a href="#">
-        <img src="/src/assets/images/paperplane.png" alt=""></a></li>
-      <li @click="activate(2)" :class="{active: activateElement === 2}"><a href="#">
-        <img src="/src/assets/images/paperplane.png" alt=""></a></li>
-      <li @click="activate(3)" :class="{active: activateElement === 3}"><a href="#">
-        <img src="/src/assets/images/paperplane.png" alt=""></a></li>
-      <li @click="activate(4)" :class="{active: activateElement === 4}"><a href="#">
-        <img src="/src/assets/images/paperplane.png" alt=""></a></li>
-    </ul>
   </div>
 </template>
 
@@ -134,29 +124,7 @@ export default {
     }
   },
   methods: {
-    handleWheelEvent(e: WheelEvent) {
-      if (e.deltaY >= 100 && this.activateElement < 4 && this.loading === false) {
-        this.activateElement = this.activateElement + 1;
-        this.loading = true
-        setTimeout(() => {
-          this.loading = false
-        }, 1500);
-      }
 
-      if (e.deltaY <= -100 && this.activateElement > 1 && this.loading === false) {
-        this.activateElement = this.activateElement - 1;
-        this.loading = true
-        setTimeout(() => {
-          this.loading = false
-        }, 1500);
-      }
-    },
-    log(param: any) {
-      console.log(param)
-    },
-    activate(value: number) {
-      this.activateElement = value;
-    }
   }
 };
 </script>
@@ -169,7 +137,6 @@ export default {
   width: 100%;
   height: calc(100vh - 72px);
   position: relative;
-  overflow: hidden;
   font-family: 'Noto Sans KR';
 
   .logo {
